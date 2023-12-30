@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Lanches Cadastrados</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% lanches.forEach(lanche=> { %>
+                <tr>
+                    <td>
+                        <%= lanche.id_lanche %>
+                    </td>
+                    <td>
+                        <%= lanche.nome_lanche %>
+                    </td>
+                    <td>R$ <%= lanche.preco_lanche.toFixed(2) %>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+
+    <h1>Cadastro de Lanches</h1>
+    <form action="produtos" method="post">
+
+        <input type="text" name="produto" placeholder="Insira o nome do Produto">
+        <input type="number" name="preco" id="" placeholder="R$">
+        <input type="submit" value="Cadastrar Produto">
+    </form>
+</body>
+
+</html>
